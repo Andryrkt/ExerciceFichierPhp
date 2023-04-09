@@ -1,7 +1,7 @@
 <?php
 include 'functions.php';
 include 'header.php';
-$lien_liste='test.php';
+$lien_liste='list.php';
 $adresse_entête=__DIR__.DIRECTORY_SEPARATOR.'txt2/base0.txt';
 $data= __DIR__.DIRECTORY_SEPARATOR.'test.csv';
 $dossier=__DIR__.DIRECTORY_SEPARATOR.'txt2';

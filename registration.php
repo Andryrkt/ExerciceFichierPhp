@@ -39,7 +39,7 @@ include 'header.php';
     </div>
     <hr>
     <div class="allerListe">
-        <a href="test.php">Aller à la liste</a>
+        <a href="list.php">Aller à la liste</a>
     </div>
 </form>
 </div>

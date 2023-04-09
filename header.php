@@ -7,7 +7,13 @@
     
     <title>Document</title>
 
+    <!-- script CSS -->
     <link rel="stylesheet" href="CSS/styles.css">
+
+    <!-- script js -->
+    <!-- <script src="/JS/script.js"></script> -->
+    <script src="JS/jquery.js"></script>
+    <script src="JS/script_ajax.js"></script>
     
 </head>
 <body>
@@ -15,7 +21,7 @@
         <nav class="nav">
             <ul class="nav_ul">
                 <li><a href='registration.php' class="btn btn_navigation">Registration</a></li>
-                <li><a href="test.php" class="btn btn_navigation">Listes</a></li>
+                <li><a href="list.php" class="btn btn_navigation">Listes</a></li>
                 <li><a href="deconnexion.php">se deconecter</a></li>
             </ul>
         </nav>
