@@ -1,0 +1,19 @@
+{
+    "name": "andry/exercice-fichier-php",
+    "description": "Exercice pour les fichier php",
+    "type": "projet",
+    "autoload": {
+        "psr-4": {
+            "Andry\\ExerciceFichierPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hasina LTN"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "spipu/html2pdf": "^5.2"
+    }
+}

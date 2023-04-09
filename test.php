@@ -2,8 +2,10 @@
 session_start();
 require 'functions.php';
 include 'header.php';
-$data= __DIR__.DIRECTORY_SEPARATOR.'test.csv';
-$dossier=__DIR__.DIRECTORY_SEPARATOR.'txt2';
+$data = __DIR__.DIRECTORY_SEPARATOR.'test.csv';
+$dossier = __DIR__.DIRECTORY_SEPARATOR.'txt2';
+$pdfListe = "pdf_liste.php";
+$detail = "detail.php";
 /*if($_SESSION["autoriser"]!="oui"){
     header('location:identification.php');
     unset($_SESSION["autoriser"]);
@@ -13,9 +15,8 @@ $dossier=__DIR__.DIRECTORY_SEPARATOR.'txt2';
 <div>
 
 <!-- <button  id="btnDelete" name="delete" value="" class="btn_listes_delete">Delete All</button> -->
-    <button class="btn btn_delete" type="submit" id="btnDelete" name="" value="">Supprimer</button>
-    <a href="enregistrement.php" class="btn btn_navigation">s'enregistrer</a>
-    <form action="pdf_liste.php" style="display:inline"><button class="btn btn_pdf" type="submit" name="pdf_liste" value="ok">PDF</button></form>
+    <button class="btn btn_delete" type="submit" id="allDelete" name="" value="">Delete All</button>
+    <form action=<?=$pdfListe?> style="display:inline"><button class="btn btn_pdf" type="submit" name="pdf_liste" value="ok">PDF</button></form>
 </div>
 <!-- <div STYLE="margin-left:auto; margin-right:auto; width:400px; position:relative; font-size:10pt; font-family:verdana; border: 2px black solid;" id="divAffichageResultat"></div><br />
 	<span id="status"></span><br />	 -->
@@ -108,8 +109,8 @@ if($files=fopen($data,"r")){
                 <td><?=$j?></td>
                 <td><?=$tab[0]?></td>
                 <td><?=$tab[1]?></td>
-                <td><form action="detail.php"><button type="submit" name="id" value="<?=$j?>" class="btn_listes">Détail</button></form></td>
-                <td><form><button type="submit" name="delete" value="<?=$j?>" class="btn_listes_delete">Delete</button></form></td>
+                <td><form action=<?=$detail?>><button type="submit" name="id" value="<?=$j?>" class="btn_listes">Détail</button></form></td>
+                <td><form><button type="submit" name="delete" value="<?=$j?>" id="onlyDelete" class="btn_listes_delete">Delete</button></form></td>
             </tr>
     <?php
         }else{

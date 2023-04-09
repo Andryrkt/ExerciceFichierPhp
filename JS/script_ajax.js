@@ -6,7 +6,7 @@ $(function () {
       element.checked = this.checked;
     }
   });
-  $("#btnDelete").click(function () {
+  $("#allDelete").click(function () {
     if ($("#checkAll")[0].checked) {
       var str = $(".check").serialize();
       console.log(str);

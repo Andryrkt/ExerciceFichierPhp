@@ -34,7 +34,7 @@ if(isset($_GET["id"]) || isset($_GET["modifier"])){
 	</tables>
 	<?php fclose($tete); fclose($fichier); ?>
   
-   	<a href="<?=$lien_liste?>" class="btn btn_navigation">RETOUR</a>
+   	
 	<form action="<?=$lien_liste?>" ><button class="btn btn_delete" type="submit" name="delete" value="<?=$id?>">Delete</button></form>
    	<form action="pdf.php" ><button class="btn btn_pdf" type="submit" name="pdf_detail" value="<?=$id?>">PDF</button></form>	
 	   <form action="update.php" ><button class="btn btn_pdf" type="submit" name="update" value="<?=$id?>">UPDATE</button></form>	

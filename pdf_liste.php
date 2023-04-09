@@ -16,9 +16,9 @@ ob_start();
     
     .tableau {
         border-collapse: collapse;
+        width: 100%;
         /* border: 2px solid midnightblue; */
-        /* box-shadow:0 5px 50px rgba(0,0,0, .15); */
-        
+        /* box-shadow:0 5px 50px rgba(0,0,0, .15); */ 
     }
 
     thead tr {
@@ -36,7 +36,7 @@ ob_start();
 </style>
 <page backtop="20mm" backbottom="20mm" backleft="10mm" backright="20mm">
     <page_header>
-        <h1>LISTES DES PERSONES ENREGISTRER</h1>
+        <h1>LISTES DES PERSONNES ENREGISTRER</h1>
     </page_header>
     <table class="tableau">
         <?php if($txt=fopen($data,"r")){
@@ -49,7 +49,7 @@ ob_start();
                         <tr><th>id</th><th><?= $tab[0]; ?></th><th><?= $tab[1]; ?></th></tr>
                     </thead>
                         <?php $isFirstLine = false; continue; ?>
-                
+                enregistrementde
                 <?php endif ?>
                 <tbody>
                     <tr><td><?= $j?></td><td><?= $tab[0]; ?></td><td><?= $tab[1]; ?></td></tr>
