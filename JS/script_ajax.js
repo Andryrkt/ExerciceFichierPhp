@@ -12,7 +12,7 @@ $(function () {
       console.log(str);
       $.ajax({
         type: "POST",
-        url: "test.php",
+        url: "list.php",
         data: str,
         success: function (response) {
           $("#divAffichageResultat").html(response); //Affichage de l'url cible, ici AjaxTemplate02.php, dans une DIV
@@ -36,7 +36,7 @@ $(function () {
       console.log(str);
       $.ajax({
         type: "POST",
-        url: "delete_All_Check.php",
+        url: "list.php",
         data: str,
         success: function (response) {
           $("#divAffichageResultat").html(response); //Affichage de l'url cible, ici AjaxTemplate02.php, dans une DIV
@@ -54,6 +54,6 @@ $(function () {
         },
       });
     }
-    window.location.href = "test.php";
+    //window.location.href = "list.php";
   });
 });

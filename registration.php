@@ -1,8 +1,9 @@
 <?php
 include 'header.php';
+
 ?>
 <div class="box">
-<form action="test.php" method="get" class="formBloc">
+<form action="list.php" method="get" class="formBloc">
     <h3>Enregistrez-vous</h3>
     <div class="formGroupe">
         <label for="nom">NOM</label>
