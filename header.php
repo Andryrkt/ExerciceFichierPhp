@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="CSS/styles.css">
 
     <!-- script js -->
-    <!-- <script src="/JS/script.js"></script> -->
     <script src="JS/jquery.js"></script>
-    <script src="JS/script_ajax.js"></script>
-    
+    <!-- <script src="JS/script.js"></script> -->
+   
 </head>
 <body>
     <header>

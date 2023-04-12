@@ -15,7 +15,7 @@ $detail = "detail.php";
 <div>
 
 <!-- <button  id="btnDelete" name="delete" value="" class="btn_listes_delete">Delete All</button> -->
-    
+<button class="btn_listes_delete" id="allDelete"> Delet All</button>
     <form action=<?=$pdfListe?> style="display:inline"><button class="btn btn_pdf" type="submit" name="pdf_liste" value="ok">PDF</button></form>
 </div>
 <!-- <div STYLE="margin-left:auto; margin-right:auto; width:400px; position:relative; font-size:10pt; font-family:verdana; border: 2px black solid;" id="divAffichageResultat"></div><br />
@@ -110,7 +110,7 @@ if($files=fopen($data,"r")){
                 <td><?=$tab[0]?></td>
                 <td><?=$tab[1]?></td>
                 <td><form action=<?=$detail?>><button type="submit" name="id" value="<?=$j?>" class="btn_listes">Détail</button></form></td>
-                <td><form><button type="submit" name="delete" value="<?=$j?>" id="onlyDelete" class="btn_listes_delete">Delete</button></form></td>
+                <td><form><button type="submit" name="delete" value="<?=$j?>" id="onlyDelete" class="btn_listes_delete" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">Delete</button></form></td>
             </tr>
     <?php
         }else{
@@ -129,4 +129,70 @@ if($files=fopen($data,"r")){
         include 'footer.php';
     ?>
 
-<button class="btn btn_delete" id="allDelete" name="" value="">Delete All</button>
+
+<script>
+    $(function () {
+  $("#checkAll").click(function () {
+    console.log(this.checked);
+
+    for (element of $(".check")) {
+      element.checked = this.checked;
+    }
+  });
+  $("#allDelete").click(function () {
+    if ($("#checkAll")[0].checked) {
+      var str = $(".check").serialize();
+      console.log(str);
+      $.ajax({
+        type: "POST",
+        url: "list.php",
+        data: str,
+        success: function (response) {
+          $("#divAffichageResultat").html(response); //Affichage de l'url cible, ici AjaxTemplate02.php, dans une DIV
+          $("#status").text("Posté");
+          document.location.reload(true);
+          //console.log(response);
+        },
+        error: function (response) {
+          $("#status").text(
+            "Erreur pour poster le formulaire : " +
+              response.status +
+              " " +
+              response.statusText
+          );
+          //console.log(response);
+        },
+      });
+    } else {
+      var form = $(".check");
+
+      var str = form.serialize();
+      console.log(str);
+      $.ajax({
+        type: "POST",
+        url: "list.php",
+        data: str,
+        success: function (response) {
+          $("#divAffichageResultat").html(response); //Affichage de l'url cible, ici AjaxTemplate02.php, dans une DIV
+          $("#status").text("Posté");
+          document.location.reload(true);
+          //console.log(response);
+        },
+        error: function (response) {
+          $("#status").text(
+            "Erreur pour poster le formulaire : " +
+              response.status +
+              " " +
+              response.statusText
+          );
+          //console.log(response);
+        },
+      });
+    }
+  });
+});
+    
+</script>
+<?php
+include 'footer.php';
+?>
