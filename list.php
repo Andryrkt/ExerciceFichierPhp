@@ -54,7 +54,7 @@ $detail = "detail.php";
 }
 
 //efface une ligne dans la liste
-if(isset($_GET["delete"])){
+if(isset($_GET["delete_only_id"])){
     $file = fopen($data, 'a+');
     if(!$file)exit("Ouverture du fichier echouée");
     // Stocker les lignes dans un tableau
@@ -63,7 +63,7 @@ if(isset($_GET["delete"])){
         $lines[] = $tab;
     }
    // dump($lines);
-    $valeur_a_supprimer=$_GET["delete"];
+    $valeur_a_supprimer=$_GET["delete_only_id"];
     //dump($valeur_a_supprimer);
     unset($lines[$valeur_a_supprimer]);
    // dump($lines);
@@ -110,7 +110,9 @@ if($files=fopen($data,"r")){
                 <td><?=$tab[0]?></td>
                 <td><?=$tab[1]?></td>
                 <td><form action=<?=$detail?>><button type="submit" name="id" value="<?=$j?>" class="btn_listes">Détail</button></form></td>
-                <td><form><button type="submit" name="delete" value="<?=$j?>" id="onlyDelete" class="btn_listes_delete" onclick="return confirm('Voulez-vous vraiment supprimer cet élément ?')">Delete</button></form></td>
+                <td><a class="delete" href="list.php?delete_only_id=<?=$j;?>"><button class="btn_listes_delete">X</button></a>
+                  <!-- <form><button type="submit" name="delete" value="//$j" id="onlyDelete" class="" onclick="confirmSuppre">Delete</button></form> -->
+                </td>
             </tr>
     <?php
         }else{
@@ -130,7 +132,7 @@ if($files=fopen($data,"r")){
     ?>
 
 
-<script>
+<!-- <script>
     $(function () {
   $("#checkAll").click(function () {
     console.log(this.checked);
@@ -192,7 +194,7 @@ if($files=fopen($data,"r")){
   });
 });
     
-</script>
+</script> -->
 <?php
 include 'footer.php';
 ?>

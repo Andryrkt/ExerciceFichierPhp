@@ -10,9 +10,7 @@
     <!-- script CSS -->
     <link rel="stylesheet" href="CSS/styles.css">
 
-    <!-- script js -->
-    <script src="JS/jquery.js"></script>
-    <!-- <script src="JS/script.js"></script> -->
+     
    
 </head>
 <body>
