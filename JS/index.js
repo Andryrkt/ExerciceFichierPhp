@@ -1,4 +1,3 @@
-import Swal from "sweetalert2";
 $(function () {
   let del = $("a.delete");
 
