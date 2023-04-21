@@ -15,7 +15,7 @@ $detail = "detail.php";
 <div>
 
 <!-- <button  id="btnDelete" name="delete" value="" class="btn_listes_delete">Delete All</button> -->
-<button class="btn_listes_delete" id="allDelete"> Delet All</button>
+<a id="allDelete" href="http://localhost/ExerciceFichierPhp/list.php"><button class="btn_listes_delete" > Delet All</button></a>
     <form action=<?=$pdfListe?> style="display:inline"><button class="btn btn_pdf" type="submit" name="pdf_liste" value="ok">PDF</button></form>
 </div>
 <!-- <div STYLE="margin-left:auto; margin-right:auto; width:400px; position:relative; font-size:10pt; font-family:verdana; border: 2px black solid;" id="divAffichageResultat"></div><br />
@@ -49,8 +49,8 @@ $detail = "detail.php";
     fseek($file, 0, SEEK_END);
     // Fermer le fichier
     if(!fclose($file)) exit("Fermeture du fichier echouée");
-    // header('location:list.php');
-    // exit;
+    header('location:http://localhost/ExerciceFichierPhp/list.php');
+    exit;
 }
 
 //efface une ligne dans la liste

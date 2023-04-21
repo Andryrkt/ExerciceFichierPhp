@@ -24,6 +24,7 @@ function recupId() {
       let chaine = tableau.join();
       let target = this.href + "?checkDelete_id=" + chaine;
       this.href = target;
+      document.location.reload(true);
     } else {
       console.log("no confirmé");
     }
