@@ -29,8 +29,8 @@ $detail = "detail.php";
 <hr>
 
 <?php
- if( isset($_POST["checkDelete"])){
-    echo('Ok');
+ if( isset($_GET["checkDelete_id"])){
+  $tabTransition =explode( ",",$_GET["checkDelete_id"]);
     $file = fopen($data, 'a+');
     if(!$file)exit("Ouverture du fichier echouée");
     // Stocker les lignes dans un tableau
@@ -38,7 +38,7 @@ $detail = "detail.php";
     while (($tab = fgets($file)) !== false) {
         $lines[] = $tab;
     }
-    foreach ($_POST["checkDelete"] as $value) {
+    foreach ($tabTransition  as $value) {
         unset($lines[$value]);
     }
     // Réécrire le fichier CSV sans la ligne supprimée
